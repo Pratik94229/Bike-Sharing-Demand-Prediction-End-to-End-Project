@@ -1,0 +1,9 @@
+pandas
+numpy
+flask
+seaborn
+scikit-learn
+ipykernel
+xgboost
+lightgbm
+#-e .
