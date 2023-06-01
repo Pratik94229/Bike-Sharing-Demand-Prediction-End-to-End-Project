@@ -111,4 +111,4 @@ This project demonstrates the application of machine learning models in predicti
 
 The Streamlit deployment provides a convenient and interactive way to access the model's predictions, making it user-friendly and accessible to a wide range of users.
 
-For further details, code implementation, and analysis, please refer to the project files and code repository.
+For further details, code implementation, and analysis, please refer to the code repository.
