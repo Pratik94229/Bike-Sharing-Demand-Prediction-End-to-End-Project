@@ -7,6 +7,10 @@ import pandas as pd
 from src.components.data_ingestion import DataIngestion
 from src.components.data_transformation import DataTransformation
 from src.components.model_trainer import ModelTrainer
+import streamlit as st
+import pickle
+from sklearn import preprocessing
+from sklearn.preprocessing import StandardScaler
 
 if __name__=='__main__':
     obj=DataIngestion()
