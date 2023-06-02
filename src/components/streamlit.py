@@ -3,6 +3,8 @@ import pandas as pd
 import pickle
 from sklearn import preprocessing
 from sklearn.preprocessing import StandardScaler
+from src.logger import logging
+
 
 
 
@@ -99,16 +101,48 @@ if st.button('Predict'):
       'weekday':weekday,'workingday':workingday,'weathersit':weathersit,'temp':temp,'atemp':atemp,'hum':hum,'windspeed':windspeed}
       
     #converting input to dataframe
-    df=pd.DataFrame([dict])
+    input_df=pd.DataFrame([dict])
+    logging.info('Input succesfully taken in streamlit and converted in dataframe')
+
+    #Prepossesing
+    train_df = pd.read_csv(r'C:\Users\prati\Desktop\Project\Bike sharing demand Prediction\artifacts\train.csv')
+    logging.info('Reading train and test data completed')
+  
+
+    target_column_name = 'cnt'
+    drop_columns = [target_column_name,'instant','dteday','casual','registered']
+
+    input_feature_train_df = train_df.drop(columns=drop_columns,axis=1)
+    target_feature_train_df=train_df[target_column_name]
+
+    #Creating object 
+    scaler = StandardScaler()
+
+    ## Trnasformating using preprocessor obj
+    input_feature_train_arr=scaler.fit_transform(input_feature_train_df)
+    input_feature_test_arr=scaler.transform(input_df)
+
+    logging.info("Completed scaling datasets.")
+
     
     
   
 
     #Loading saved model
     loaded_model = pickle.load(open(r'C:\Users\prati\Desktop\Project\Bike sharing demand Prediction\artifacts\model.pkl','rb'))
-    y_preds=loaded_model.predict(df)
-    st.subheader("Expected Bike Sharing demand")
-    st.write(round(y_preds[0],0))
+    y_preds=loaded_model.predict(input_df)
+    st.subheader(":red[Expected Bike Sharing Demand]")
+    import streamlit as st
+
+    # Define CSS style for red color
+    red_color = "<style> .red-text { color: red; } </style>"
+
+    # Display the output with red color
+    st.markdown(red_color, unsafe_allow_html=True)
+    st.subheader(str(round(y_preds[0], 0)))
+
+  
+    logging.info("Project run successful")
  
 
 
