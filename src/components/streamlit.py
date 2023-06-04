@@ -107,7 +107,11 @@ if st.button('Predict'):
     logging.info('Input succesfully taken in streamlit and converted in dataframe')
 
     #Prepossesing
+<<<<<<< HEAD
     train_df = pd.read_csv(os.path.join('artifacts','train.csv'))
+=======
+    train_df = pd.read_csv(r'C:\Users\prati\Desktop\Project\Bike sharing demand Prediction\artifacts\train.csv')
+>>>>>>> f11aeba526a68b7b2df197c897d26323ce569e1b
     logging.info('Reading train and test data completed')
   
 
