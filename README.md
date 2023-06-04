@@ -92,10 +92,16 @@ Model Deployment
 
 The selected XGBoost model was deployed using Streamlit, a Python library for building interactive web applications. The deployment allows users to input the relevant features such as date, weather conditions, and time, and obtain the predicted bike rental count as the output.
 
-The Streamlit application provides a user-friendly interface for interacting with the model and obtaining real-time predictions.
-Usage
+To use the deployed model using flask, follow these steps:
 
-To use the deployed model, follow these steps:
+    1) Install the required dependencies by running pip install -r requirements.txt(make sure to remove commented e .).
+    2) First train the model using command python src/pipeline/training_pipeline.py which creates model. 
+    3) Then run the Flask application using the command python app.py
+    4) Access the application in your web browser at the provided URL.
+    5) Enter the required input features such as date, weather conditions, and time etc.
+    6) Click the "Predict" button to obtain the predicted bike rental count.
+
+To use the deployed model using streamlit, follow these steps:
 
     1) Install the required dependencies by running pip install -r requirements.txt(make sure to remove commented e .).
     2) First train the model using command python src/pipeline/training_pipeline.py which creates model. 
