@@ -107,11 +107,7 @@ if st.button('Predict'):
     logging.info('Input succesfully taken in streamlit and converted in dataframe')
 
     #Prepossesing
-<<<<<<< HEAD
     train_df = pd.read_csv(os.path.join('artifacts','train.csv'))
-=======
-    train_df = pd.read_csv(r'C:\Users\prati\Desktop\Project\Bike sharing demand Prediction\artifacts\train.csv')
->>>>>>> f11aeba526a68b7b2df197c897d26323ce569e1b
     logging.info('Reading train and test data completed')
   
 
@@ -135,7 +131,8 @@ if st.button('Predict'):
   
 
     #Loading saved model
-    loaded_model = pickle.load(open(r'C:\Users\prati\Desktop\Project\Bike sharing demand Prediction\artifacts\model.pkl','rb'))
+    model_path=os.path.join("artifacts","model.pkl")
+    loaded_model = pickle.load(open(r'model_path','rb'))
     y_preds=loaded_model.predict(input_df)
     st.subheader(":red[Expected Bike Sharing Demand]")
     import streamlit as st
