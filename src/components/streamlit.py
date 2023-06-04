@@ -5,7 +5,7 @@ import pandas as pd
 import pickle
 from sklearn import preprocessing
 from sklearn.preprocessing import StandardScaler
-from src.logger import logging
+#from src.logger import logging
 
 
 
@@ -104,11 +104,11 @@ if st.button('Predict'):
       
     #converting input to dataframe
     input_df=pd.DataFrame([dict])
-    logging.info('Input succesfully taken in streamlit and converted in dataframe')
+    #logging.info('Input succesfully taken in streamlit and converted in dataframe')
 
     #Prepossesing
     train_df = pd.read_csv(os.path.join('artifacts','train.csv'))
-    logging.info('Reading training data completed')
+    #logging.info('Reading training data completed')
   
 
     target_column_name = 'cnt'
@@ -120,11 +120,11 @@ if st.button('Predict'):
     #Creating object 
     scaler = StandardScaler()
 
-    ## Trnasformating using preprocessor obj
+    ## Transformating using preprocessor obj
     input_feature_train_arr=scaler.fit_transform(input_feature_train_df)
     input_feature_test_arr=scaler.transform(input_df)
 
-    logging.info("Completed scaling datasets.")
+    #logging.info("Completed scaling datasets.")
 
     
     
@@ -134,10 +134,10 @@ if st.button('Predict'):
     model_path=os.path.join("artifacts","model.pkl")
   
     loaded_model = pickle.load(open(model_path,'rb'))
-    logging.info('Model loaded')
+    #logging.info('Model loaded')
     y_preds=loaded_model.predict(input_df)
     st.subheader(":red[Expected Bike Sharing Demand]")
-    import streamlit as st
+   
 
     # Define CSS style for red color
     red_color = "<style> .red-text { color: red; } </style>"
@@ -147,7 +147,7 @@ if st.button('Predict'):
     st.subheader(str(round(y_preds[0], 0)))
 
   
-    logging.info("Project run successful")
+    #logging.info("Project run successful")
  
 
 
