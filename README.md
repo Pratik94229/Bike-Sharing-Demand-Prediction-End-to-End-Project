@@ -105,7 +105,7 @@ To use the deployed model, follow these steps:
     6) Click the "Predict" button to obtain the predicted bike rental count.
 
 Please note that the accuracy of the predictions may vary based on the input data and model performance.
-Conclusion
+## Conclusion
 
 This project demonstrates the application of machine learning models in predicting bike rental counts. By leveraging the power of XGBoost and utilizing various input features, the model achieves accurate predictions, allowing users to make informed decisions related to bike rental management.
 
