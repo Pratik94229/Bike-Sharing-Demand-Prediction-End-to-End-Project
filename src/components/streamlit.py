@@ -1,4 +1,6 @@
 import streamlit as st
+import os
+import sys
 import pandas as pd
 import pickle
 from sklearn import preprocessing
@@ -105,7 +107,7 @@ if st.button('Predict'):
     logging.info('Input succesfully taken in streamlit and converted in dataframe')
 
     #Prepossesing
-    train_df = pd.read_csv(r'C:\Users\prati\Desktop\Project\Bike sharing demand Prediction\artifacts\train.csv')
+    train_df = pd.read_csv(os.path.join('artifacts','train.csv'))
     logging.info('Reading train and test data completed')
   
 
