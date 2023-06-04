@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bike Sharing Demand Prediction</title>
+</head>
+<body>
+    <h1>Bike Sharing Demand Prediction</h1>
+
+    <form action="/predict" method="POST">
+        <h3>Enter weather specific attribute:</h3>
+        <label>Weather situation:</label>
+        <input type="number" name="weathersit" min="1" max="4" required><br><br>
+
+        <label>Temperature value:</label>
+        <input type="number" name="temp" min="0.02" max="1.0" step="0.01" required><br><br>
+
+        <label>Absolute Temperature:</label>
+        <input type="number" name="atemp" min="0.0" max="1.0" step="0.01" required><br><br>
+
+        <label>Absolute Humidity value:</label>
+        <input type="number" name="hum" min="0.0" max="1.0" step="0.01" required><br><br>
+
+        <label>Windspeed value:</label>
+        <input type="number" name="windspeed" min="0.0" max="0.86" step="0.01" required><br><br>
+
+        <h3>Enter information about time of the year:</h3>
+        <label>Season:</label>
+        <input type="number" name="season" min="1" max="4" required><br><br>
+
+        <label>Select Year:</label>
+        <input type="number" name="yr" min="0" max="1" required><br><br>
+
+        <label>Select Month of year:</label>
+        <input type="number" name="mnth" min="1" max="12" required><br><br>
+
+        <label>Select hour of the day:</label>
+        <input type="number" name="hr" min="1" max="23" required><br><br>
+
+        <h3>Enter Specific Day attribute:</h3>
+        <label>Select day of the week:</label>
+        <input type="number" name="weekday" min="0" max="6" required><br><br>
+
+        <label>Select holiday or not:</label>
+        <input type="number" name="holiday" min="0" max="1" required><br><br>
+
+        <label>Select whether working day:</label>
+        <input type="number" name="workingday" min="0" max="1" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
