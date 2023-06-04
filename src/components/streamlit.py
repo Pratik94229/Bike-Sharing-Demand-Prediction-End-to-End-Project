@@ -108,7 +108,7 @@ if st.button('Predict'):
 
     #Prepossesing
     train_df = pd.read_csv(os.path.join('artifacts','train.csv'))
-    logging.info('Reading train and test data completed')
+    logging.info('Reading training data completed')
   
 
     target_column_name = 'cnt'
@@ -132,7 +132,9 @@ if st.button('Predict'):
 
     #Loading saved model
     model_path=os.path.join("artifacts","model.pkl")
-    loaded_model = pickle.load(open(r'model_path','rb'))
+  
+    loaded_model = pickle.load(open(model_path,'rb'))
+    logging.info('Model loaded')
     y_preds=loaded_model.predict(input_df)
     st.subheader(":red[Expected Bike Sharing Demand]")
     import streamlit as st
