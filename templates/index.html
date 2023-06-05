@@ -3,67 +3,136 @@
 <head>
     <title>Bike Sharing Demand Prediction</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1 class="title">Bike Sharing Demand Prediction</h1>
-    <h2>Enter accurate information to predict bike sharing demand</h2>
+    <div class="container">
+        <h1 class="title">Bike Sharing Demand Prediction</h1>
+        <h2 class="subtitle">Enter accurate information to predict bike sharing demand</h2>
 
-    <form method="POST" action="/predict">
-        <h3>Enter weather-specific attributes:</h3>
-        <div class="input-group">
-            <label for="weathersit">Weather situation:</label>
-            <input type="number" id="weathersit" name="weathersit" min="1" max="4" step="1" required>
-        </div>
-        <div class="input-group">
-            <label for="temp">Temperature value:</label>
-            <input type="number" id="temp" name="temp" min="0.02" max="1.0" step="0.01" required>
-        </div>
-        <div class="input-group">
-            <label for="atemp">Absolute Temperature:</label>
-            <input type="number" id="atemp" name="atemp" min="0.0" max="1.0" step="0.01" required>
-        </div>
-        <div class="input-group">
-            <label for="hum">Absolute Humidity value:</label>
-            <input type="number" id="hum" name="hum" min="0.0" max="1.0" step="0.01" required>
-        </div>
-        <div class="input-group">
-            <label for="windspeed">Windspeed value:</label>
-            <input type="number" id="windspeed" name="windspeed" min="0.0" max="0.86" step="0.01" required>
-        </div>
+        <form method="POST" action="/predict">
+            <h3>Enter weather-specific attributes:</h3>
+            <div class="input-group">
+                <label for="weathersit">Weather situation:</label>
+                <input type="number" id="weathersit" name="weathersit" min="1" max="4" step="1" required>
+            </div>
+            <div class="input-group">
+                <label for="temp">Temperature value:</label>
+                <input type="number" id="temp" name="temp" min="0.02" max="1.0" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="atemp">Absolute Temperature:</label>
+                <input type="number" id="atemp" name="atemp" min="0.0" max="1.0" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="hum">Absolute Humidity value:</label>
+                <input type="number" id="hum" name="hum" min="0.0" max="1.0" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="windspeed">Windspeed value:</label>
+                <input type="number" id="windspeed" name="windspeed" min="0.0" max="0.86" step="0.01" required>
+            </div>
 
-        <h3>Enter information about the time of the year:</h3>
-        <div class="input-group">
-            <label for="season">Season:</label>
-            <input type="number" id="season" name="season" min="1" max="4" step="1" required>
-        </div>
-        <div class="input-group">
-            <label for="yr">Select Year:</label>
-            <input type="number" id="yr" name="yr" min="0" max="1" step="1" required>
-        </div>
-        <div class="input-group">
-            <label for="mnth">Select Month of Year:</label>
-            <input type="number" id="mnth" name="mnth" min="1" max="12" step="1" required>
-        </div>
-        <div class="input-group">
-            <label for="hr">Select Hour of the Day:</label>
-            <input type="number" id="hr" name="hr" min="1" max="23" step="1" required>
-        </div>
+            <h3>Enter information about the time of the year:</h3>
+            <div class="input-group">
+                <label for="season">Season:</label>
+                <input type="number" id="season" name="season" min="1" max="4" step="1" required>
+            </div>
+            <div class="input-group">
+                <label for="yr">Select Year:</label>
+                <input type="number" id="yr" name="yr" min="0" max="1" step="1" required>
+            </div>
+            <div class="input-group">
+                <label for="mnth">Select Month of Year:</label>
+                <input type="number" id="mnth" name="mnth" min="1" max="12" step="1" required>
+            </div>
+            <div class="input-group">
+                <label for="hr">Select Hour of the Day:</label>
+                <input type="number" id="hr" name="hr" min="1" max="23" step="1" required>
+            </div>
 
-        <h3>Enter specific day attributes:</h3>
-        <div class="input-group">
-            <label for="weekday">Select Day of the Week:</label>
-            <input type="number" id="weekday" name="weekday" min="0" max="6" step="1" required>
-        </div>
-        <div class="input-group">
-            <label for="holiday">Select Holiday or Not:</label>
-            <input type="number" id="holiday" name="holiday" min="0" max="1" step="1" required>
-        </div>
-        <div class="input-group">
-            <label for="workingday">Select Whether Working Day:</label>
-            <input type="number" id="workingday" name="workingday" min="0" max="1" step="1" required>
-        </div>
+            <h3>Enter specific day attributes:</h3>
+            <div class="input-group">
+                <label for="weekday">Select Day of the Week:</label>
+                <input type="number" id="weekday" name="weekday" min="0" max="6" step="1" required>
+            </div>
+            <div class="input-group">
+                <label for="holiday">Select Holiday or Not:</label>
+                <input type="number" id="holiday" name="holiday" min="0" max="1" step="1" required>
+            </div>
+            <div class="input-group">
+                <label for="workingday">Select Whether Working Day:</label>
+                <input type="number" id="workingday" name="workingday" min="0" max="1" step="1" required>
+            </div>
 
-        <input type="submit" value="Predict">
-    </form>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
 </body>
 </html>
