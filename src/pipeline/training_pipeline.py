@@ -11,6 +11,7 @@ import streamlit as st
 import pickle
 from sklearn import preprocessing
 from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import RandomizedSearchCV
 
 if __name__=='__main__':
     obj=DataIngestion()
@@ -19,4 +20,4 @@ if __name__=='__main__':
     data_transformation =  DataTransformation()
     train_arr,test_arr,_=data_transformation.initaite_data_transformation(train_data_path,test_data_path)
     model_trainer=ModelTrainer()
-    model_trainer.initate_model_training(train_arr,test_arr)
+    model_trainer.initiate_model_training(train_arr,test_arr)
