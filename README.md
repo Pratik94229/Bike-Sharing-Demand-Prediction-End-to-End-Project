@@ -92,6 +92,8 @@ Model Deployment
 
 The selected XGBoost model was deployed using Streamlit, a Python library for building interactive web applications. The deployment allows users to input the relevant features such as date, weather conditions, and time, and obtain the predicted bike rental count as the output.
 
+Deployment Link- https://pratik94229-bike-sharing-demand-p-srccomponentsstreamlit-4ksiv8.streamlit.app/
+
 To use the deployed model using flask, follow these steps:
 
     1) Install the required dependencies by running pip install -r requirements.txt(make sure to remove commented e .).
