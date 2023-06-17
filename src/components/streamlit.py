@@ -62,7 +62,7 @@ with col3:
 
 with col4:
   hr= st.slider(':green[Select hour of the day]',1,23)
-  st.write('[mobile weight:', hr)
+  st.write('Selected hour:', hr)
 
 
 
