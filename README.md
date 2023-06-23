@@ -115,7 +115,7 @@ To use the deployed model using streamlit, follow these steps:
 Please note that the accuracy of the predictions may vary based on the input data and model performance.
 ## Conclusion
 
-This project demonstrates the application of machine learning models in predicting bike rental counts. By leveraging the power of XGBoost and utilizing various input features, the model achieves accurate predictions, allowing users to make informed decisions related to bike rental management.
+This project demonstrates the application of machine learning models in predicting bike rental counts. By leveraging the power of LightGBM and utilizing various input features, the model achieves accurate predictions, allowing users to make informed decisions related to bike rental management.
 
 The Streamlit deployment provides a convenient and interactive way to access the model's predictions, making it user-friendly and accessible to a wide range of users.
 
