@@ -6,6 +6,28 @@ This project aims to develop a predictive model to forecast the bike rental coun
 Dataset Description
 Day Dataset
 
+## Folder structure
+
+```
+├───artifacts
+├───documents
+│   └───Project Report
+├───logs
+├───notebook
+│   └───data
+├───src
+│   ├───components
+│   ├───pipeline
+├───static
+├───templates
+```
+- `notebook/`: Jupyter notebooks for data exploration, preprocessing, and model development.
+- `notebook/data/`: contains the dataset file(s).
+- `src/`: Source code for the project, including preprocessing functions and model training .
+- `src/pipeline/`:Source code for different implemented pipelines.
+- `artifacts/`: Directory to store model and evaluation results and perform predictions.
+- `static/` and `templates/` contains basic frontend framework for deployment using flask.
+
 ## The "day" dataset consists of the following columns:
 
     - instant: A unique identifier for each record
@@ -61,10 +83,10 @@ To run the project locally, please ensure you have the following dependencies in
 Once you have the dependencies, follow these steps to set up the project:
 
 1. Clone the repository: `git clone https://github.com/Pratik.94229/Bike-sharing-demand-prediction.git`
-2. Navigate to the project directory: `cd Bike-sharing-demand-prediction`
-3. Create a virtual environment (optional): `python -m venv env`
-4. Activate the virtual environment (optional): `source env/bin/activate`
-5. Install the required packages: `pip install -r requirements.txt`
+3. Navigate to the project directory: `cd Bike-sharing-demand-prediction`
+4. Create a virtual environment (optional): `conda create -p venv python==3.8`
+5. Activate the virtual environment (optional): `activate venv/`
+6. Install the required packages: `pip install -r requirements.txt`
 
 ## Usage
 
